@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_providers"
+        android:icon="@drawable/outline_home_black_20"
+        android:title="@string/nav_home" />
+
+    <item
+        android:id="@+id/nav_my_covers"
+        android:icon="@drawable/outline_real_estate_agent_black_20"
+        android:title="@string/nav_assets" />
+
+    <item
+        android:id="@+id/nav_claims"
+        android:icon="@drawable/outline_receipt_long_black_20"
+        android:title="@string/nav_history" />
+
+    <item
+        android:id="@+id/nav_news"
+        android:icon="@drawable/outline_account_box_black_20"
+        android:title="@string/nav_account" />
+
+
+</menu>

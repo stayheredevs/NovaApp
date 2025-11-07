@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">NovaApp</string>
+    
+    <!-- Service Types Screen -->
+    <string name="select_service_type">Select Service Type</string>
+    <string name="select_service_subtype">Select Service Subtype</string>
+    
+    <!-- Service Types -->
+    <string name="cleaning">Cleaning</string>
+    <string name="electrical_works">Electrical Works</string>
+    <string name="plumbing">Plumbing</string>
+    <string name="furniture_repairs">Furniture Repairs</string>
+    
+    <!-- Cleaning Subtypes -->
+    <string name="general_cleaning">General Cleaning</string>
+    <string name="deep_cleaning">Deep Cleaning</string>
+    <string name="carpet_cleaning">Carpet Cleaning</string>
+    <string name="sofa_set_cleaning">Sofa Set Cleaning</string>
+    <string name="mattress_cleaning">Mattress Cleaning</string>
+    
+    <!-- Navigation -->
+    <string name="back">Back</string>
+    <string name="select">Select</string>
+    
+    <!--Admin nav menu-->
+    <string name="nav_home">Home</string>
+    <string name="nav_assets">Assets</string>
+    <string name="nav_history">History</string>
+    <string name="nav_account">Account</string>
+</resources>
