@@ -7,17 +7,17 @@
         android:title="@string/nav_home" />
 
     <item
-        android:id="@+id/nav_my_covers"
+        android:id="@+id/nav_my_assets"
         android:icon="@drawable/outline_real_estate_agent_black_20"
         android:title="@string/nav_assets" />
 
     <item
-        android:id="@+id/nav_claims"
+        android:id="@+id/nav_history"
         android:icon="@drawable/outline_receipt_long_black_20"
         android:title="@string/nav_history" />
 
     <item
-        android:id="@+id/nav_news"
+        android:id="@+id/nav_account"
         android:icon="@drawable/outline_account_box_black_20"
         android:title="@string/nav_account" />
 

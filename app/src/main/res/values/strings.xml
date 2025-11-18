@@ -17,6 +17,20 @@
     <string name="carpet_cleaning">Carpet Cleaning</string>
     <string name="sofa_set_cleaning">Sofa Set Cleaning</string>
     <string name="mattress_cleaning">Mattress Cleaning</string>
+    <string name="bathroom_cleaning">Bathroom Cleaning</string>
+    <string name="laundry_cleaning">Laundry Cleaning</string>
+
+
+    <!--General-->
+    <string name="property_name">My Property Name</string>
+    <string name="property_address">Property Address</string>
+    <string name="service_type">Service Type</string>
+    <string name="property_description">Property description</string>
+    <string name="property_size">Property Size</string>
+    <string name="search_properties">Search properties by name, size, or location...</string>
+    <string name="available_properties">My Properties</string>
+
+
     
     <!-- Navigation -->
     <string name="back">Back</string>
@@ -27,4 +41,29 @@
     <string name="nav_assets">Assets</string>
     <string name="nav_history">History</string>
     <string name="nav_account">Account</string>
+
+    <!--Admin Home Fragment-->
+    <string name="fragment_home">Welcome home</string>
+    <string name="active_bookings">Active Bookings</string>
+    <string name="available_services">Available Services</string>
+    <string name="my_properties">My Properties</string>
+    <string name="selected_property">Selected Property</string>
+    <string name="book_service">Book Service</string>
+    <string name="all_services">All Services</string>
+
+
+    <!--Assets Fragment-->
+    <string name="fragment_assets">Admin Assets!!!</string>
+
+    <!--History Fragment-->
+    <string name="fragment_history">History</string>
+
+    <!--Account Fragment-->
+    <string name="fragment_account">My Account</string>
+
+    <!--Job Status-->
+    <string name="status_accepted">Accepted</string>
+    <string name="status_started">Started</string>
+    <string name="status_ended">Ended</string>
+    <string name="status_rated">Rated</string>
 </resources>

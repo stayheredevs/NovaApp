@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NovaApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".home.AdminLandingPage"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.NovaApp">
@@ -25,10 +25,35 @@
         </activity>
 
         <activity
-            android:name=".home.AdminLandingPage"
+            android:name=".home.ActivityJobStatus"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NovaApp"
             />
+
+        <activity
+            android:name=".home.ActivityAllProperties"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+
+            />
+
+        <activity
+            android:name=".home.ActivityBookService"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+
+            />
+
+        <activity
+            android:name=".home.ActivityAllServices"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
+
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

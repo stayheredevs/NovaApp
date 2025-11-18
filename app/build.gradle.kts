@@ -36,7 +36,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -48,6 +48,7 @@ android {
 
 dependencies {
 
+    implementation(libs.activity.ktx)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -72,6 +73,9 @@ dependencies {
     // XML Layout Dependencies
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
+
+    //Glide
+    implementation(libs.glide)
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
