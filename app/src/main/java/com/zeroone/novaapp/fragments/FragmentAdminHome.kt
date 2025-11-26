@@ -188,6 +188,7 @@ class FragmentAdminHome: Fragment() {
 
         AppLog.Log("handleActiveBookingsClick", "clicked ${activeBookings.propertyId}")
 
+
     }
 
 
@@ -196,6 +197,11 @@ class FragmentAdminHome: Fragment() {
         AppLog.Log("handleServiceClick", "clicked ${property.propertyId}")
 
         AppUtils.ToastMessage("clicked ${property.propertyName}", requireContext())
+
+        val intent = Intent(requireActivity(), ActivityBookService::class.java)
+        intent.putExtra("property", property)
+        startActivity(intent)
+
     }
 
 

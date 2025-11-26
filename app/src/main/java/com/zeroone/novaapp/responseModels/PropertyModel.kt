@@ -1,11 +1,13 @@
 package com.zeroone.novaapp.responseModels
 
-import com.google.gson.annotations.Expose
+
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 
-
-class PropertyModel (
+@Parcelize
+data class PropertyModel(
     @SerializedName("propertyId")
     val propertyId: String? = null,
 
@@ -17,7 +19,4 @@ class PropertyModel (
 
     @SerializedName("size")
     val size: String? = null
-) {
-
-    
-}
+) : Parcelable

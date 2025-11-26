@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/txtServiceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/service_name"
+        android:textColor="@color/black"
+        style="@style/NovaBold"
+        android:layout_margin="10dp"
+        android:textSize="22sp"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtServiceName"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/imgRating"
+            android:layout_width="20dp"
+            android:layout_height="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/outline_star_black_36"
+            app:tint="@color/quantum_yellow800"
+            />
+
+        <TextView
+            android:id="@+id/txtRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/imgRating"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="4.8"
+            android:textSize="14sp"
+            android:textColor="@color/quantum_grey800"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/montserrat_medium"
+            />
+
+        <ImageView
+            android:id="@+id/dotSeparator"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            app:layout_constraintStart_toEndOf="@+id/txtRating"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/icon_dot"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            />
+
+
+        <TextView
+            android:id="@+id/txtReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/dotSeparator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="12K reviews"
+            android:textSize="14sp"
+            android:textColor="@color/quantum_grey800"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/montserrat_medium"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clServiceDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clRating"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:id="@+id/textBasePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/base_price"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/NovaMedium"
+            android:textColor="@color/quantum_grey800"
+
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clServiceCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textBasePrice"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="KES 0.0"
+                style="@style/NovaMedium"
+                android:textColor="@color/black"
+
+                />
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="1dp"
+                android:layout_height="15dp"
+                app:layout_constraintStart_toEndOf="@+id/txtPrice"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/quantum_grey400"
+                android:layout_marginStart="8dp"
+                />
+
+
+            <ImageView
+                android:id="@+id/imgTime"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/outline_access_time_black_18"
+                app:layout_constraintStart_toEndOf="@id/view"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/primary_color"
+                android:layout_marginStart="8dp"
+                />
+
+            <TextView
+                android:id="@+id/txtServiceTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgTime"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="2 hrs"
+                style="@style/NovaMedium"
+                android:textColor="@color/black"
+                android:layout_marginStart="8dp"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    <View
+        android:id="@+id/view_seperator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clServiceDetails"
+        android:background="@color/quantum_grey400"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clServiceExtras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/view_seperator"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+
+        <TextView
+            android:id="@+id/txtServiceExtras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/preferred_option"
+            android:textColor="@color/black"
+            style="@style/NovaBold"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewExtras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clipToPadding="false"
+            android:paddingStart="10dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="16dp"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/txtServiceExtras"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:minHeight="56dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:text="@string/action_button"
+        android:textAllCaps="false"
+        app:cornerRadius="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clServiceExtras"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Widget.Material3.Button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

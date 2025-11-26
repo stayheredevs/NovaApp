@@ -21,7 +21,7 @@
 
         <!-- Back Button -->
         <ImageView
-            android:id="@+id/Back"
+            android:id="@+id/imgBack"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/outline_arrow_back_black_24"
@@ -44,7 +44,7 @@
             android:textColor="@color/text_primary"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/Back"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

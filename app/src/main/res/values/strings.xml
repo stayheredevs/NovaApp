@@ -22,13 +22,24 @@
 
 
     <!--General-->
-    <string name="property_name">My Property Name</string>
+    <string name="kenya_currency_code">KES</string>
+    <string name="property_name">Property Name</string>
     <string name="property_address">Property Address</string>
     <string name="service_type">Service Type</string>
     <string name="property_description">Property description</string>
     <string name="property_size">Property Size</string>
-    <string name="search_properties">Search properties by name, size, or location...</string>
+    <string name="search_properties">Search properties by name, size, or location…</string>
     <string name="available_properties">My Properties</string>
+    <string name="service_name">Service Name</string>
+    <string name="base_price">Base Price:</string>
+    <string name="preferred_option">Please select your preferred option.</string>
+    <string name="option_name">Option Name</string>
+    <string name="action_button">Continue</string>
+    <string name="my_assets">My Assets</string>
+
+
+
+
 
 
     
@@ -50,10 +61,19 @@
     <string name="selected_property">Selected Property</string>
     <string name="book_service">Book Service</string>
     <string name="all_services">All Services</string>
+    <string name="start_at">Starts at</string>
+    <string name="selected_details">Selected Details</string>
+    <string name="select_date">Pick preferred date and time</string>
+    <string name="book">Starts at</string>
+
 
 
     <!--Assets Fragment-->
     <string name="fragment_assets">Admin Assets!!!</string>
+    <string name="my_managers">My Managers</string>
+    <string name="selection_list">List</string>
+    <string name="category">Category</string>
+
 
     <!--History Fragment-->
     <string name="fragment_history">History</string>

@@ -11,7 +11,9 @@ import com.zeroone.novaapp.R
 import com.zeroone.novaapp.databinding.AdapterServicesListBinding
 import com.zeroone.novaapp.responseModels.ServicesModel
 
-class AdapterServiceList: ListAdapter<ServicesModel, AdapterServiceList.MyViewHolder>(ServicesDiffCallback()) {
+class AdapterServiceList(
+    val onServiceClicked: (ServicesModel) -> Unit = {}
+): ListAdapter<ServicesModel, AdapterServiceList.MyViewHolder>(ServicesDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
@@ -113,6 +115,10 @@ class AdapterServiceList: ListAdapter<ServicesModel, AdapterServiceList.MyViewHo
                             )
                             .into(imgServiceIcon)
                     }
+                }
+
+                root.setOnClickListener {
+                    onServiceClicked(serviceModel)
                 }
 
 

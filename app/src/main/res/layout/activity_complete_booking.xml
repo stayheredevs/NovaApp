@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true">
+
+    <!-- Header Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/outline_arrow_back_black_24"
+            android:contentDescription="@string/back"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@color/text_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/book_service"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="12dp"
+            android:gravity="center_vertical" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmitBooking"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:isScrollContainer="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Selected Property Section Title -->
+            <TextView
+                android:id="@+id/textSelectedDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/selected_details"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!-- Selected Property Card - Material 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSelectedProperty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="6dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                app:strokeColor="@android:color/transparent"
+                app:rippleColor="@color/ripple_color"
+                android:stateListAnimator="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textSelectedDetails">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSelectedProperty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                        <!-- Property Icon Container with Material 3 Surface Tint -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/clPropertyIcon"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="@color/service_icon_background"
+                            app:strokeWidth="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imgProperty"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/home"
+                                android:contentDescription="@string/property_name"
+                                android:scaleType="fitCenter"
+                                android:layout_gravity="center"
+                                app:tint="@color/primary_color" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Property Info Container -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clPropertyInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="4dp"
+                            app:layout_constraintStart_toEndOf="@+id/clPropertyIcon"
+                            app:layout_constraintEnd_toStartOf="@+id/imgEditProperty"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <!-- Section Label -->
+                            <TextView
+                                android:id="@+id/lblPropertySection"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Property"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:letterSpacing="0.05"
+                                android:textAllCaps="true"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="PROPERTY" />
+
+                            <!-- Property Name -->
+                            <TextView
+                                android:id="@+id/txtPropertyName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/property_name"
+                                android:textColor="@color/text_primary"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:maxLines="2"
+                                android:ellipsize="end"
+                                android:lineSpacingExtra="4dp"
+                                android:layout_marginTop="6dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/lblPropertySection"
+                                tools:text="Sunset Villa" />
+
+                            <!-- Address Container -->
+                            <LinearLayout
+                                android:id="@+id/clAddress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtPropertyName"
+                                app:layout_constraintBottom_toBottomOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/imgLocation"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:src="@drawable/outline_location_on_black_20"
+                                    android:contentDescription="@string/property_address"
+                                    app:tint="@color/text_secondary"
+                                    android:layout_marginEnd="8dp" />
+
+                                <TextView
+                                    android:id="@+id/txtPropertyAddress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kilimani, Nairobi"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:maxLines="1"
+                                    android:ellipsize="end"
+                                    tools:text="Kilimani, Nairobi" />
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <ImageView
+                            android:id="@+id/imgEditProperty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:src="@drawable/outline_edit_black_18"
+                            android:padding="8dp"
+
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Divider with Material 3 Style -->
+                    <View
+                        android:id="@+id/view_separator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/quantum_grey600"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:alpha="0.12"
+                        app:layout_constraintTop_toBottomOf="@+id/clSelectedProperty"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <!-- Service Section -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clSelectedService"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_separator"
+                        android:layout_marginTop="10dp">
+
+                        <!-- Service Icon Container with Material 3 Surface Tint -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/clServiceIcon"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="@color/service_icon_background"
+                            app:strokeWidth="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imgService"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/cleaning_services"
+                                android:contentDescription="@string/property_name"
+                                android:scaleType="fitCenter"
+                                android:layout_gravity="center"
+                                app:tint="@color/primary_color" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Service Info Container -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clServiceInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="4dp"
+                            app:layout_constraintStart_toEndOf="@+id/clServiceIcon"
+                            app:layout_constraintEnd_toStartOf="@+id/imgEditService"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <!-- Section Label -->
+                            <TextView
+                                android:id="@+id/lblServiceSection"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Service"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:letterSpacing="0.05"
+                                android:textAllCaps="true"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="SERVICE" />
+
+                            <!-- Service Name -->
+                            <TextView
+                                android:id="@+id/txtServiceName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sofa_set_cleaning"
+                                android:textColor="@color/text_primary"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:maxLines="2"
+                                android:ellipsize="end"
+                                android:lineSpacingExtra="4dp"
+                                android:layout_marginTop="6dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/lblServiceSection"
+                                tools:text="Sofa Set Cleaning" />
+
+                            <!-- Service Details Container -->
+                            <LinearLayout
+                                android:id="@+id/llService"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtServiceName"
+                                app:layout_constraintBottom_toBottomOf="parent">
+
+                                <TextView
+                                    android:id="@+id/txtOptionDetails"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="3 seater - "
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:maxLines="1"
+                                    android:ellipsize="end" />
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <ImageView
+                            android:id="@+id/imgEditService"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:src="@drawable/outline_edit_black_18"
+                            android:padding="8dp"
+
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- Selected Property Section Title -->
+            <TextView
+                android:id="@+id/textDateDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/select_date"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardSelectedProperty" />
+
+
+            <!-- Date Picker Card - Material 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDatePicker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                app:strokeColor="@android:color/transparent"
+                app:rippleColor="@color/ripple_color"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textDateDetails">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- Calendar Icon Container -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/clDateIcon"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/service_icon_background"
+                        app:strokeWidth="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imgCalendar"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/outline_calendar_today_24"
+                            android:contentDescription="Select Date"
+                            android:scaleType="fitCenter"
+                            android:layout_gravity="center"
+                            app:tint="@color/primary_color" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Date Info Container -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clDateInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/clDateIcon"
+                        app:layout_constraintEnd_toStartOf="@+id/imgDateArrow"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <!-- Section Label -->
+                        <TextView
+                            android:id="@+id/lblDateSection"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Service Date"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:letterSpacing="0.05"
+                            android:textAllCaps="true"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="SERVICE DATE" />
+
+                        <!-- Selected Date -->
+                        <TextView
+                            android:id="@+id/txtSelectedDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Select Date"
+                            android:textColor="@color/text_primary"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:layout_marginTop="6dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lblDateSection"
+                            tools:text="Monday, January 15, 2024" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Arrow Icon -->
+                    <ImageView
+                        android:id="@+id/imgDateArrow"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/outline_arrow_forward_ios_24"
+                        android:contentDescription="Select Date"
+                        app:tint="@color/text_secondary"
+                        android:alpha="0.6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Time Picker Card - Material 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTimePicker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                app:strokeColor="@android:color/transparent"
+                app:rippleColor="@color/ripple_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDatePicker">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- Time Icon Container -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/clTimeIcon"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/service_icon_background"
+                        app:strokeWidth="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imgTime"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/outline_access_time_24"
+                            android:contentDescription="Select Time"
+                            android:scaleType="fitCenter"
+                            android:layout_gravity="center"
+                            app:tint="@color/primary_color" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Section Label -->
+                    <TextView
+                        android:id="@+id/lblTimeSection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Service Time"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:letterSpacing="0.05"
+                        android:textAllCaps="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toEndOf="@+id/clTimeIcon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="SERVICE TIME" />
+
+                    <!-- Start Time Container -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardStartTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/service_icon_background"
+                        app:strokeWidth="0dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:layout_constraintStart_toEndOf="@+id/clTimeIcon"
+                        app:layout_constraintEnd_toStartOf="@+id/cardEndTime"
+                        app:layout_constraintTop_toBottomOf="@+id/lblTimeSection">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/lblStartTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Start Time"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:letterSpacing="0.05"
+                                android:textAllCaps="true"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="START TIME" />
+
+                            <TextView
+                                android:id="@+id/txtStartTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--:--"
+                                android:textColor="@color/text_primary"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:layout_marginTop="6dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/lblStartTime"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                tools:text="--:--" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- End Time Container -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardEndTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/service_icon_background"
+                        app:strokeWidth="0dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:layout_constraintStart_toEndOf="@+id/cardStartTime"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblTimeSection">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/lblEndTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="End Time"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:letterSpacing="0.05"
+                                android:textAllCaps="true"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="END TIME" />
+
+                            <TextView
+                                android:id="@+id/txtEndTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--:--"
+                                android:textColor="@color/text_primary"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:layout_marginTop="6dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/lblEndTime"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                tools:text="--:--" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Notes Field Card - Material 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardNotes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                app:strokeColor="@android:color/transparent"
+                app:rippleColor="@color/ripple_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardTimePicker">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- Notes Icon Container -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/clNotesIcon"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/service_icon_background"
+                        app:strokeWidth="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imgNotes"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/outline_note_24"
+                            android:contentDescription="Additional Notes"
+                            android:scaleType="fitCenter"
+                            android:layout_gravity="center"
+                            app:tint="@color/primary_color" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Section Label -->
+                    <TextView
+                        android:id="@+id/lblNotesSection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Additional Notes"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:letterSpacing="0.05"
+                        android:textAllCaps="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toEndOf="@+id/clNotesIcon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="ADDITIONAL NOTES" />
+
+                    <!-- Notes Input Container -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardNotesInput"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:minHeight="120dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/service_icon_background"
+                        app:strokeWidth="0dp"
+                        app:layout_constraintStart_toEndOf="@+id/clNotesIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblNotesSection"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp">
+
+                            <EditText
+                                android:id="@+id/editTextNotes"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:minHeight="88dp"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:textColor="@color/text_primary"
+                                android:textColorHint="@color/text_hint"
+                                android:hint="Add any special instructions or notes..."
+                                android:inputType="textMultiLine|textCapSentences"
+                                android:imeOptions="actionDone"
+                                android:maxLines="5"
+                                android:gravity="top|start"
+                                android:background="@android:color/transparent"
+                                android:padding="0dp"
+                                android:scrollbars="vertical"
+                                android:overScrollMode="always"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                tools:text="" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+    <!-- Submit Button - Material 3 -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSubmitBooking"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="56dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="Submit Booking"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat_bold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/primary_color"
+        app:cornerRadius="28dp"
+        app:rippleColor="@color/white"
+        app:icon="@drawable/outline_arrow_forward_ios_24"
+        app:iconGravity="textEnd"
+        app:iconTint="@color/white"
+        app:iconPadding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Widget.Material3.Button" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

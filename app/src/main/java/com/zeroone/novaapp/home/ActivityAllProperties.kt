@@ -1,5 +1,6 @@
 package com.zeroone.novaapp.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,8 +13,10 @@ import com.zeroone.novaapp.adapters.AdapterMyProperties
 import com.zeroone.novaapp.databinding.ActivityAllPropertiesBinding
 import com.zeroone.novaapp.responseModels.PropertyModel
 import com.zeroone.novaapp.utilities.EdgeToEdgeManager
+import com.zeroone.novaapp.utilities.SharedPreference
 import com.zeroone.novaapp.viewModels.PropertiesViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
@@ -22,8 +25,12 @@ class ActivityAllProperties: AppCompatActivity() {
     lateinit var binding: ActivityAllPropertiesBinding
     lateinit var adapterMyProperties: AdapterMyProperties
     lateinit var propertiesViewModel: PropertiesViewModel
-
     private var originalPropertiesList: MutableList<PropertyModel> = mutableListOf()
+
+    var lstSelectedProperty: MutableList<PropertyModel> = mutableListOf()
+
+    @Inject
+    lateinit var sharedPreference: SharedPreference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,7 +88,15 @@ class ActivityAllProperties: AppCompatActivity() {
 
 
     fun initAdapter(){
-        adapterMyProperties = AdapterMyProperties()
+        adapterMyProperties = AdapterMyProperties(
+            onPropertyClicked = { propertyModel ->
+
+                handlePropertyClick(propertyModel)
+
+            }
+
+
+        )
 
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.recyclerViewBookings.apply {
@@ -129,9 +144,26 @@ class ActivityAllProperties: AppCompatActivity() {
                 property.size?.contains(query, ignoreCase = true) == true
             }
         }
-        
+
         //update adapter with filtered list
         adapterMyProperties.submitList(filteredList.toMutableList())
+
+    }
+
+    fun handlePropertyClick(propertyModel: PropertyModel){
+
+        if (sharedPreference.eventSource == "BOOKING_COMPLETE"){
+
+            lstSelectedProperty.add(propertyModel)
+
+            sharedPreference.selectedProperty = lstSelectedProperty
+
+            finish()
+
+        }
+
+
+
 
     }
 

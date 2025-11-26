@@ -52,26 +52,132 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/txtServiceName"
-                android:layout_width="wrap_content"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@+id/clPropertyIcon"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:text="@string/service_type"
-                android:textColor="@color/black"
-                android:fontFamily="@font/montserrat_medium"
-                android:textSize="15dp"
-                />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                />
+                android:layout_marginStart="5dp">
+
+                <TextView
+                    android:id="@+id/txtServiceName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/service_type"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="15sp"
+                    />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clServiceCost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/txtServiceName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/txtPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="KES 0.0"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/quantum_grey800"
+
+                        />
+
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        app:layout_constraintStart_toEndOf="@+id/txtPrice"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@color/quantum_grey400"
+                        android:layout_marginStart="8dp"
+                        />
+
+
+                    <ImageView
+                        android:id="@+id/imgTime"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/outline_access_time_black_18"
+                        app:layout_constraintStart_toEndOf="@id/view"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:tint="@color/primary_color"
+                        android:layout_marginStart="8dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtServiceTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imgTime"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="2 hrs"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/quantum_grey800"
+                        android:layout_marginStart="8dp"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/clServiceCost"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone">
+
+
+                    <ImageView
+                        android:id="@+id/imgRating"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/outline_star_black_20"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:tint="@color/quantum_yellow700"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imgRating"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="2 hrs"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/quantum_grey600"
+                        android:layout_marginStart="8dp"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
