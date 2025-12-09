@@ -10,7 +10,7 @@ import com.zeroone.novaapp.R
 import com.zeroone.novaapp.databinding.AdminLandingPageBinding
 import com.zeroone.novaapp.fragments.FragmentAccount
 import com.zeroone.novaapp.fragments.FragmentAssets
-import com.zeroone.novaapp.fragments.FragmentHistory
+import com.zeroone.novaapp.fragments.FragmentJobs
 import com.zeroone.novaapp.utilities.AppLog
 import com.zeroone.novaapp.utilities.EdgeToEdgeManager
 import dagger.hilt.android.AndroidEntryPoint
@@ -74,7 +74,7 @@ class AdminLandingPage: AppCompatActivity() {
 
                     AppLog.Log("bottomNavigationItemSelectedListener", "nav_history")
 
-                    fragment = FragmentHistory()
+                    fragment = FragmentJobs()
                     loadFragment(fragment, "fragment_admin_history")
                     return true
                 }

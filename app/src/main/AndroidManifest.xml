@@ -62,12 +62,22 @@
             />
 
         <activity
-            android:name=".home.FragmentMyAssets"
+            android:name=".home.ActivityManagerDetails"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NovaApp"
             />
 
+        <activity
+            android:name=".home.ActivityPropertyDetails"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
 
+        <activity
+            android:name=".home.ActivityOrderDetails"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
 
 
         <meta-data

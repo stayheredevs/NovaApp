@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardJob"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="100dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:rippleColor="?attr/colorControlHighlight"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:minHeight="100dp">
+
+            <!-- Service Icon Container -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardServiceIcon"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorPrimaryContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgServiceIcon"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_cleaning"
+                    android:contentDescription="@string/service_type"
+                    android:scaleType="fitCenter" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Service Info Container -->
+            <LinearLayout
+                android:id="@+id/llServiceInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintStart_toEndOf="@+id/cardServiceIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <!-- Service Name and Rating Container -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:baselineAligned="false">
+
+                    <TextView
+                        android:id="@+id/txtServiceName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/service_name"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:letterSpacing="0.01"
+                        tools:text="Deep Cleaning Service" />
+
+                    <!-- Rating Display -->
+                    <LinearLayout
+                        android:id="@+id/llRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="8dp"
+                        android:visibility="visible"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/txtRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.5"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:layout_marginStart="3dp"
+                            tools:text="4.5" />
+
+                        <ImageView
+                            android:id="@+id/imgStar"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginStart="5dp"
+                            android:src="@drawable/outline_star_24"
+                            android:contentDescription="Rating"
+                            app:tint="@color/warning_color" />
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Date Container -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:id="@+id/imgDate"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/outline_calendar_today_24"
+                        android:contentDescription="@string/select"
+                        app:tint="?attr/colorOnSurfaceVariant" />
+
+                    <TextView
+                        android:id="@+id/txtDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15 Jan 2025"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_marginStart="4dp"
+                        tools:text="15 Jan 2025" />
+
+                </LinearLayout>
+
+                <!-- Time Range Container -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="6dp">
+
+                    <ImageView
+                        android:id="@+id/imgTime"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/outline_access_time_24"
+                        android:contentDescription="@string/select"
+                        app:tint="?attr/colorOnSurfaceVariant" />
+
+                    <TextView
+                        android:id="@+id/txtStartTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10:00 AM"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_marginStart="4dp"
+                        tools:text="10:00 AM" />
+
+                    <TextView
+                        android:id="@+id/txtTimeSeparator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" - "
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp" />
+
+                    <TextView
+                        android:id="@+id/txtEndTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12:00 PM"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        tools:text="12:00 PM" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- More/Details Button -->
+            <ImageView
+                android:id="@+id/imgArrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/outline_arrow_forward_ios_black_20"
+                app:tint="@color/text_hint"
+                android:alpha="0.6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

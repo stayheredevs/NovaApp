@@ -36,11 +36,14 @@
     <string name="option_name">Option Name</string>
     <string name="action_button">Continue</string>
     <string name="my_assets">My Assets</string>
-
-
-
-
-
+    <string name="history">History</string>
+    <string name="jobs">Jobs</string>
+    <string name="account">Account</string>
+    <string name="manager_name">Manager Name</string>
+    <string name="manager_email">Manager Email</string>
+    <string name="properties_managing">3 Properties</string>
+    <string name="properties">Properties</string>
+    <string name="actions">Actions</string>
 
     
     <!-- Navigation -->
@@ -51,7 +54,13 @@
     <string name="nav_home">Home</string>
     <string name="nav_assets">Assets</string>
     <string name="nav_history">History</string>
+    <string name="nav_jobs">Jobs</string>
     <string name="nav_account">Account</string>
+
+    <!--Manage assets menu-->
+    <string name="nav_add_property">Add Property</string>
+    <string name="nav_add_manager">Add Manager</string>
+
 
     <!--Admin Home Fragment-->
     <string name="fragment_home">Welcome home</string>
@@ -65,18 +74,31 @@
     <string name="selected_details">Selected Details</string>
     <string name="select_date">Pick preferred date and time</string>
     <string name="book">Starts at</string>
+    <string name="property_details">Property Details</string>
+    <string name="manager_details">Manager Details</string>
+    <string name="allocated_managers">Allocated Managers</string>
+    <string name="add_asset">Add</string>
+    <string name="booking_details">Booking Details</string>
+    <string name="job_stages">Job Stages</string>
+
 
 
 
     <!--Assets Fragment-->
     <string name="fragment_assets">Admin Assets!!!</string>
     <string name="my_managers">My Managers</string>
-    <string name="selection_list">List</string>
+    <string name="selection_list">Assets List</string>
     <string name="category">Category</string>
+    <string name="unit">Unit: </string>
+    <string name="unit_number">239E-A05</string>
+
 
 
     <!--History Fragment-->
     <string name="fragment_history">History</string>
+    <string name="past_jobs">Past Jobs</string>
+    <string name="current_jobs">Current Jobs</string>
+    <string name="invoices">Invoices</string>
 
     <!--Account Fragment-->
     <string name="fragment_account">My Account</string>

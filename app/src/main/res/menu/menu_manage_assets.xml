@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_properties"
+        android:title="@string/nav_add_property" />
+
+    <item
+        android:id="@+id/nav_managers"
+        android:title="@string/nav_add_manager" />
+
+</menu>

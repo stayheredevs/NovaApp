@@ -3,6 +3,8 @@ package com.zeroone.novaapp.viewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.GsonBuilder
+import com.zeroone.novaapp.home.InvoicesModel
+import com.zeroone.novaapp.responseModels.PastJobsModel
 import com.zeroone.novaapp.responseModels.ServiceOptions
 import com.zeroone.novaapp.responseModels.ServicesModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -27,6 +29,23 @@ class ServicesViewModel @Inject constructor(): ViewModel() {
             return field
         }
 
+    var pastJobsLiveData: MutableLiveData<MutableList<PastJobsModel>>? = null
+        get() {
+            if (field == null) {
+                pastJobsLiveData = MutableLiveData()
+            }
+            return field
+        }
+
+    var invoicesLiveData: MutableLiveData<MutableList<InvoicesModel>>? = null
+        get() {
+            if (field == null) {
+                invoicesLiveData = MutableLiveData()
+            }
+            return field
+        }
+
+
 
     fun processServices(){
         val gsonBuilder = GsonBuilder()
@@ -45,8 +64,24 @@ class ServicesViewModel @Inject constructor(): ViewModel() {
         val serviceOptionsArray: Array<ServiceOptions> = gson.fromJson(serviceOptions, Array<ServiceOptions>::class.java)
         serviceOptionsLiveData?.postValue(serviceOptionsArray.toMutableList())
 
-
     }
+
+    fun processPastJobs() {
+        val gsonBuilder = GsonBuilder()
+        val gson = gsonBuilder.create()
+
+        val pastJobsArray: Array<PastJobsModel> = gson.fromJson(pastJobs, Array<PastJobsModel>::class.java)
+        pastJobsLiveData?.postValue(pastJobsArray.toMutableList())
+    }
+
+    fun processInvoices() {
+        val gsonBuilder = GsonBuilder()
+        val gson = gsonBuilder.create()
+
+        val invoicesArray: Array<InvoicesModel> = gson.fromJson(invoices, Array<InvoicesModel>::class.java)
+        invoicesLiveData?.postValue(invoicesArray.toMutableList())
+    }
+
 
     val services = """[
   {
@@ -114,6 +149,69 @@ class ServicesViewModel @Inject constructor(): ViewModel() {
   {
     "optionName": "Recliner Sofa",
     "optionPrice": "2500"
+  }
+]
+"""
+
+    var pastJobs = """[
+  {
+    "propertyId": "P-10231",
+    "propertyName": "Sunset Villas Apartment",
+    "serviceType": "General Cleaning",
+    "serviceDate": "2025-02-14",
+    "serviceTime": "09:30 AM"
+  },
+  {
+    "propertyId": "P-87452",
+    "propertyName": "Greenwood Estate House 12",
+    "serviceType": "Deep Cleaning",
+    "serviceDate": "2025-03-02",
+    "serviceTime": "01:45 PM"
+  },
+  {
+    "propertyId": "P-66317",
+    "propertyName": "Riverside Heights Block B",
+    "serviceType": "Sofa Cleaning",
+    "serviceDate": "2025-01-28",
+    "serviceTime": "11:10 AM"
+  },
+  {
+    "propertyId": "P-44892",
+    "propertyName": "Parkview Towers Unit 7A",
+    "serviceType": "Carpet Cleaning",
+    "serviceDate": "2025-02-05",
+    "serviceTime": "03:20 PM"
+  },
+  {
+    "propertyId": "P-99104",
+    "propertyName": "Oakridge Residency",
+    "serviceType": "Mattress Cleaning",
+    "serviceDate": "2025-03-12",
+    "serviceTime": "10:05 AM"
+  }
+]
+"""
+
+    val invoices = """[
+  {
+    "invoiceNumber": "INV-2025001",
+    "invoiceStatus": "cleared"
+  },
+  {
+    "invoiceNumber": "INV-2025002",
+    "invoiceStatus": "cleared"
+  },
+  {
+    "invoiceNumber": "INV-2025003",
+    "invoiceStatus": "cleared"
+  },
+  {
+    "invoiceNumber": "INV-2025004",
+    "invoiceStatus": "cleared"
+  },
+  {
+    "invoiceNumber": "INV-2025005",
+    "invoiceStatus": "cleared"
   }
 ]
 """

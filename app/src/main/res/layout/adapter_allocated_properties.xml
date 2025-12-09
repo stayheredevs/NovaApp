@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardSelectedProperty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:strokeWidth="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clSelectedProperty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Property Icon Container -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPropertyIcon"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/circular_edges_filled"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/imgProperty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/home"
+                    android:contentDescription="@string/property_name"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                     />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Property Info Container -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPropertyInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintStart_toEndOf="@+id/clPropertyIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <!-- Property Name -->
+                <TextView
+                    android:id="@+id/txtPropertyName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/property_name"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <!-- Address Container -->
+                <LinearLayout
+                    android:id="@+id/clAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPropertyName">
+
+                    <ImageView
+                        android:id="@+id/imgLocation"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/outline_location_on_black_20"
+                        android:contentDescription="@string/property_address"
+                        app:tint="@color/text_secondary"
+                        android:layout_marginEnd="6dp" />
+
+                    <TextView
+                        android:id="@+id/txtPropertyAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kilimani, Nairobi"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clAddress"
+                    android:paddingTop="5dp">
+
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/icons_unit"
+                        android:layout_gravity="center_vertical"
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/unit"
+                        style="@style/NovaMedium"
+                        android:layout_marginStart="7dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtUnitNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/unit_number"
+                        style="@style/NovaBold"
+                        android:layout_marginStart="7dp"
+                        />
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
