@@ -36,8 +36,6 @@ class AdapterAllServices(
             with(binding){
                 txtServiceName.text = serviceModel.serviceTypeName
 
-
-
                 when(serviceModel.serviceTypeId?.lowercase()) {
                     "1" -> {
                         Glide.with(binding.root.context)

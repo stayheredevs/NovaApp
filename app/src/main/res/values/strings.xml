@@ -44,6 +44,8 @@
     <string name="properties_managing">3 Properties</string>
     <string name="properties">Properties</string>
     <string name="actions">Actions</string>
+    <string name="make_payment">Make Payment</string>
+
 
     
     <!-- Navigation -->
@@ -79,7 +81,14 @@
     <string name="allocated_managers">Allocated Managers</string>
     <string name="add_asset">Add</string>
     <string name="booking_details">Booking Details</string>
+    <string name="pending_bill">Pending Bill</string>
     <string name="job_stages">Job Stages</string>
+    <string name="add_property">Add Property</string>
+    <string name="set_property_type">Select your property type</string>
+    <string name="apartment">Apartment</string>
+    <string name="bungalow">Bungalow</string>
+
+
 
 
 

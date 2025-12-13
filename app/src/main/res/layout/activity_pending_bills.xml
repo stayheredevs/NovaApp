@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!-- Header Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/outline_arrow_back_black_24"
+            android:contentDescription="@string/back"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@color/text_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/pending_bill"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="12dp"
+            android:gravity="center_vertical" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer"
+        app:layout_constraintBottom_toTopOf="@+id/btnAction">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Pending Balance Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPendingBalance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorPrimaryContainer"
+                app:rippleColor="?attr/colorControlHighlight"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:minHeight="120dp">
+
+                    <!-- Balance Icon -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBalanceIcon"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp"
+                        app:cardBackgroundColor="?attr/colorSurface"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imgBalanceIcon"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/outline_receipt_long_24"
+                            android:contentDescription="Pending balance"
+                            app:tint="?attr/colorPrimary" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Balance Info Container -->
+                    <LinearLayout
+                        android:id="@+id/llBalanceInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="12dp"
+                        app:layout_constraintStart_toEndOf="@+id/cardBalanceIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/llDueDateInfo">
+
+                        <TextView
+                            android:id="@+id/labelPendingBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pending Balance"
+                            android:textColor="?attr/colorOnPrimaryContainer"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:alpha="0.7" />
+
+                        <TextView
+                            android:id="@+id/txtPendingBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="KES 15,500.00"
+                            android:textColor="?attr/colorOnPrimaryContainer"
+                            android:textSize="28sp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textStyle="bold"
+                            android:layout_marginTop="4dp"
+                            tools:text="KES 15,500.00" />
+
+                    </LinearLayout>
+
+                    <!-- Due Date Info Container -->
+                    <LinearLayout
+                        android:id="@+id/llDueDateInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toEndOf="@+id/cardBalanceIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llBalanceInfo"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imgDueDateIcon"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/icon_date"
+                            android:contentDescription="Due date"
+                            android:alpha="0.7" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="8dp">
+
+                            <TextView
+                                android:id="@+id/labelDueDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Due Date"
+                                android:textColor="?attr/colorOnPrimaryContainer"
+                                android:textSize="11sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:alpha="0.7" />
+
+                            <TextView
+                                android:id="@+id/txtDueDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15 Jan 2025"
+                                android:textColor="?attr/colorOnPrimaryContainer"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:layout_marginTop="2dp"
+                                tools:text="15 Jan 2025" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Scrollable Payment Options Container -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                app:layout_constraintTop_toBottomOf="@+id/cardPendingBalance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/cardTotalAmount">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!-- Payment Amount Section -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardPaymentAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="0dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="?attr/colorSurface"
+                        android:layout_marginBottom="16dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clPaymentAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:minHeight="120dp">
+
+                            <!-- Payment Type Toggle -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardPaymentTypeToggle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="1dp"
+                                app:strokeColor="?attr/colorOutlineVariant"
+                                app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginBottom="16dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:padding="4dp">
+
+                                    <!-- Full Payment Option -->
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/cardFullPayment"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:cardCornerRadius="10dp"
+                                        app:cardElevation="0dp"
+                                        app:strokeWidth="0dp"
+                                        app:cardBackgroundColor="?attr/colorPrimaryContainer"
+                                        app:rippleColor="?attr/colorPrimary"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:layout_marginEnd="4dp">
+
+                                        <TextView
+                                            android:id="@+id/txtFullPayment"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Full Payment"
+                                            android:textColor="?attr/colorPrimary"
+                                            android:textSize="13sp"
+                                            android:fontFamily="@font/montserrat_bold"
+                                            android:gravity="center"
+                                            android:padding="12dp" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                    <!-- Partial Payment Option -->
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/cardPartialPayment"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:cardCornerRadius="10dp"
+                                        app:cardElevation="0dp"
+                                        app:strokeWidth="0dp"
+                                        app:cardBackgroundColor="?attr/colorSurface"
+                                        app:rippleColor="?attr/colorControlHighlight"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:layout_marginStart="4dp">
+
+                                        <TextView
+                                            android:id="@+id/txtPartialPayment"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Partial Payment"
+                                            android:textColor="?attr/colorOnSurfaceVariant"
+                                            android:textSize="13sp"
+                                            android:fontFamily="@font/montserrat_medium"
+                                            android:gravity="center"
+                                            android:padding="12dp" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <!-- Payment Amount Label -->
+                            <TextView
+                                android:id="@+id/labelPaymentAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Payment Amount"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cardPaymentTypeToggle" />
+
+                            <!-- Amount Input Container -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardAmountInput"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:minHeight="48dp"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="1dp"
+                                app:strokeColor="?attr/colorOutlineVariant"
+                                app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/labelPaymentAmount"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginTop="8dp">
+
+                                <!-- Full Payment Amount Display (TextView) -->
+                                <TextView
+                                    android:id="@+id/txtPaymentAmount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="KES 15,500.00"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
+                                    android:textSize="16sp"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:gravity="center"
+                                    android:paddingStart="16dp"
+                                    android:paddingEnd="16dp"
+                                    android:paddingTop="12dp"
+                                    android:paddingBottom="12dp"
+                                    android:visibility="visible"
+                                    tools:text="KES 15,500.00" />
+
+                                <!-- Partial Payment Amount Input (EditText) -->
+                                <EditText
+                                    android:id="@+id/edtPartialAmount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Enter amount"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
+                                    android:textColorHint="?attr/colorOnSurfaceVariant"
+                                    android:textSize="16sp"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:gravity="center"
+                                    android:paddingStart="16dp"
+                                    android:paddingEnd="16dp"
+                                    android:paddingTop="12dp"
+                                    android:paddingBottom="12dp"
+                                    android:minHeight="48dp"
+                                    android:inputType="numberDecimal"
+                                    android:visibility="gone"
+                                    android:background="@android:color/transparent"
+                                    tools:text="KES 5,000" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Payment Methods Section -->
+                    <TextView
+                        android:id="@+id/labelPaymentMethods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment Methods"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Mobile Money Options - Horizontal Layout -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="20dp">
+
+                        <!-- Mpesa Card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardMpesa"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="?attr/colorOutlineVariant"
+                            app:cardBackgroundColor="?attr/colorSurface"
+                            app:rippleColor="?attr/colorControlHighlight"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp"
+                                android:minHeight="100dp">
+
+                                <!-- Mpesa Logo -->
+                                <ImageView
+                                    android:id="@+id/imgMpesaLogo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/mpesa_transprent"
+                                    android:contentDescription="Mpesa logo"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:src="@drawable/mpesa_transprent" />
+
+                                <!-- Mpesa Label -->
+                                <TextView
+                                    android:id="@+id/txtMpesa"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Mpesa"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="8dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/imgMpesaLogo" />
+
+                                <!-- Selected Indicator -->
+                                <ImageView
+                                    android:id="@+id/viewMpesaSelected"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:background="@drawable/circular_selected_indicator"
+                                    android:visibility="visible"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    android:layout_marginEnd="8dp" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Airtel Money Card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAirtelMoney"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="?attr/colorOutlineVariant"
+                            app:cardBackgroundColor="?attr/colorSurface"
+                            app:rippleColor="?attr/colorControlHighlight"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp"
+                                android:minHeight="100dp">
+
+                                <!-- Airtel Money Logo -->
+                                <ImageView
+                                    android:id="@+id/imgAirtelLogo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/airtel_transparent"
+                                    android:contentDescription="Airtel Money logo"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:src="@drawable/airtel_transparent" />
+
+                                <!-- Airtel Money Label -->
+                                <TextView
+                                    android:id="@+id/txtAirtelMoney"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Airtel Money"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="8dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/imgAirtelLogo" />
+
+                                <!-- Unselected Indicator -->
+                                <ImageView
+                                    android:id="@+id/viewAirtelSelected"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:background="@drawable/circular_unselected_indicator"
+                                    android:visibility="visible"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    android:layout_marginEnd="8dp" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Total Amount Card (Fixed at Bottom) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTotalAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/labelTotalAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Amount"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtTotalAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="KES 0.00"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="KES 87.50" />
+
+                    <TextView
+                        android:id="@+id/txtVatInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="VAT. 15% will be charged along payment"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:alpha="0.7"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelTotalAmount" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:minHeight="56dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:text="@string/make_payment"
+        android:textAllCaps="false"
+        app:cornerRadius="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Widget.Material3.Button" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

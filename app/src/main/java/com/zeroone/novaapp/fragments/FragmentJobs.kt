@@ -18,6 +18,7 @@ import com.zeroone.novaapp.adapters.AdapterMyAssetCategories
 import com.zeroone.novaapp.adapters.AdapterPastJobs
 import com.zeroone.novaapp.databinding.FragmentJobsBinding
 import com.zeroone.novaapp.home.ActivityOrderDetails
+import com.zeroone.novaapp.home.ActivityPendingBill
 import com.zeroone.novaapp.home.InvoicesModel
 import com.zeroone.novaapp.responseModels.ActiveBookingsModel
 import com.zeroone.novaapp.responseModels.PastJobsModel
@@ -237,6 +238,14 @@ class FragmentJobs: Fragment() {
         if (!::adapterInvoices.isInitialized){
             adapterInvoices = AdapterInvoices(
                 onItemClick = { invoice ->
+                    //action after clicking on item
+                    val intent = Intent(context, ActivityPendingBill::class.java)
+                    intent.putExtra("invoice", invoice)
+                    startActivity(intent)
+
+                    AppUtils.ToastMessage("invoice clicked ${invoice.invoiceNumber}", requireActivity())
+
+
                 }
             )
             val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
@@ -259,6 +268,9 @@ class FragmentJobs: Fragment() {
                         activeBookings->
 
                     //action after clicking on item
+                    /*val intent = Intent(context, ActivityOrderDetails::class.java)
+                    intent.putExtra("job", activeBookings)
+                    startActivity(intent)*/
 
                 }
             )

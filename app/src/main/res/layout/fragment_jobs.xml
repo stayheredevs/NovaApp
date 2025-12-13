@@ -254,7 +254,7 @@
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingBottom="30dp"
         android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@+id/cardDateFilter"
         app:layout_constraintStart_toStartOf="parent" />
@@ -308,10 +308,12 @@
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingBottom="70dp"
+        android:layout_marginBottom="16dp"
         android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@+id/llAssetsList"
-        app:layout_constraintStart_toStartOf="parent"  />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPastJobs"
@@ -322,10 +324,12 @@
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingBottom="70dp"
+        android:layout_marginBottom="16dp"
         android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@+id/llAssetsList"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewInvoices"
@@ -336,10 +340,12 @@
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingBottom="70dp"
+        android:layout_marginBottom="16dp"
         android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@+id/llAssetsList"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 

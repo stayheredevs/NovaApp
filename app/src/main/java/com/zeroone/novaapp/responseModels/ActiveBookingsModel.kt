@@ -1,7 +1,10 @@
 package com.zeroone.novaapp.responseModels
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class ActiveBookingsModel(
     @SerializedName("propertyId")
     val propertyId: String? = null,
@@ -17,7 +20,4 @@ data class ActiveBookingsModel(
 
     @SerializedName("timestamp")
     val timestamp: String? = null
-) {
-
-
-}
+): Parcelable

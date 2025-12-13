@@ -2,6 +2,7 @@ package com.zeroone.novaapp.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -28,6 +29,11 @@ class AdapterJobStages (
 
     override fun onBindViewHolder(holder: JobStepsViewHolder, position: Int) {
         holder.bind(getItem(position))
+
+        val isLast = position == itemCount - 1
+        if (isLast) {
+            holder.binding.view.visibility = View.GONE
+        }
     }
 
     inner class JobStepsViewHolder(var binding: AdapterJobsStageBinding): RecyclerView.ViewHolder(binding.root){
@@ -50,6 +56,18 @@ class AdapterJobStages (
                         txtStage.setTextColor(context.resources.getColor(R.color.primary_color))
 
                     }
+                    "active"->{
+                        imgStage.setImageResource(R.drawable.icon_green_dot)
+                        view.setBackgroundColor(context.resources.getColor(R.color.success_color))
+                        txtStage.setTextColor(context.resources.getColor(R.color.success_color))
+
+                    }
+                    "pending"->{
+                        llDescription.visibility = View.GONE
+                        //imgStage.setImageResource(R.drawable.icon_circle_stage)
+
+                    }
+
                 }
 
 

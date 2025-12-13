@@ -61,6 +61,11 @@ class ActivityAllProperties: AppCompatActivity() {
         propertiesViewModel.propertiesLiveData?.observe(this, Observer {
             propertyList ->
 
+            // Populate original list for filtering
+            originalPropertiesList.clear()
+            originalPropertiesList = propertyList.toMutableList()
+
+            // Submit to adapter
             adapterMyProperties.submitList(propertyList)
 
 
@@ -140,8 +145,9 @@ class ActivityAllProperties: AppCompatActivity() {
             //filtering using multiple fields
             originalPropertiesList.filter {
                 property ->
-                property.propertyName?.contains(query, ignoreCase = true) == true ||
-                property.size?.contains(query, ignoreCase = true) == true
+                property.propertyName?.contains(query, ignoreCase = true) == true
+                //||
+                //                property.size?.contains(query, ignoreCase = true) == true
             }
         }
 

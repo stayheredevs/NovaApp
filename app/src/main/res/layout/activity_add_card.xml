@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F4F8">
+
+    <!-- Header with Back Button and Title -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/outline_arrow_back_black_24"
+            android:contentDescription="@string/back"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="?attr/colorOnPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add New Card"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Card Preview (Below Header, Dark Blue) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPreview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:minHeight="200dp">
+
+            <!-- Card Brand Logo (MasterCard) - Top LEFT -->
+            <ImageView
+                android:id="@+id/imgCardBrand"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/outline_credit_card_24"
+                android:contentDescription="Card brand"
+                app:tint="?attr/colorOnPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/outline_credit_card_24" />
+
+            <!-- Expiry Date - Top RIGHT -->
+            <TextView
+                android:id="@+id/txtPreviewExpiry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09/23"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_medium"
+                android:alpha="0.9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="04/23" />
+
+            <!-- Card Number Preview - Center -->
+            <TextView
+                android:id="@+id/txtPreviewCardNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=".... .... .... 7041"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="22sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:letterSpacing="0.15"
+                android:gravity="start"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgCardBrand"
+                android:layout_marginTop="24dp"
+                tools:text=".... .... .... 7041" />
+
+            <!-- Cardholder Name - Bottom LEFT -->
+            <TextView
+                android:id="@+id/txtPreviewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MELINA THOSE"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_medium"
+                android:textAllCaps="true"
+                android:alpha="0.9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="32dp"
+                tools:text="MELINA THOSE" />
+
+            <!-- Debit Card Label - Bottom RIGHT -->
+            <TextView
+                android:id="@+id/txtCardType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Debit Card"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat_medium"
+                android:alpha="0.8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="32dp"
+                tools:text="Debit Card" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:isScrollContainer="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddCard">
+
+        <!-- Card Details Form -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Card Number Section -->
+                <TextView
+                    android:id="@+id/labelCardNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Card Number"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardNumberContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/colorOutlineVariant"
+                    app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp"
+                        android:minHeight="56dp">
+
+                        <EditText
+                            android:id="@+id/edtCardNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="0000 0000 0000 0000"
+                            android:text="1179 9088 5241 7041"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textColorHint="?attr/colorOnSurfaceVariant"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:inputType="number"
+                            android:maxLength="19"
+                            android:background="@android:color/transparent"
+                            android:padding="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imgCardBrandSmall"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imgCardBrandSmall"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/outline_credit_card_24"
+                            android:contentDescription="Card brand"
+                            app:tint="?attr/colorPrimary"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            tools:src="@drawable/outline_credit_card_24" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Expiry Date and CVV Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Expiry Date -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="8dp">
+
+                        <TextView
+                            android:id="@+id/labelExpiryDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Expiry Date"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardExpiryContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="?attr/colorOutlineVariant"
+                            app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                            <EditText
+                                android:id="@+id/edtExpiryDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="MM/YY"
+                                android:text="04/23"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textColorHint="?attr/colorOnSurfaceVariant"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:minHeight="56dp"
+                                android:gravity="center"
+                                android:background="@android:color/transparent"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:paddingTop="14dp"
+                                android:paddingBottom="14dp"
+                                tools:text="04/23" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <!-- CVV -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:id="@+id/labelCVV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CVV"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardCVVContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="?attr/colorOutlineVariant"
+                            app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                            <EditText
+                                android:id="@+id/edtCVV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="000"
+                                android:text="980"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textColorHint="?attr/colorOnSurfaceVariant"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:minHeight="56dp"
+                                android:gravity="center"
+                                android:background="@android:color/transparent"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:paddingTop="14dp"
+                                android:paddingBottom="14dp"
+                                tools:text="980" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Name on Card Section -->
+                <TextView
+                    android:id="@+id/labelNameOnCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name on Card"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardNameContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/colorOutlineVariant"
+                    app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                    <EditText
+                        android:id="@+id/edtNameOnCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter name as on card"
+                        android:text="MELINA THOSE"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textColorHint="?attr/colorOnSurfaceVariant"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="textCapCharacters"
+                        android:minHeight="56dp"
+                        android:background="@android:color/transparent"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp"
+                        tools:text="MELINA THOSE" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Save Card Details Option -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <!-- Green Circular Checkbox -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCheckbox"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp"
+                        app:cardBackgroundColor="#4CAF50">
+
+                        <ImageView
+                            android:id="@+id/imgCheckmark"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/outline_check_24"
+                            android:contentDescription="Selected"
+                            app:tint="@color/white"
+                            android:visibility="visible"
+                            tools:src="@drawable/outline_check_24" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/txtSaveCard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Securely save card and details"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/montserrat_medium" />
+
+                </LinearLayout>
+
+                <!-- Supported Card Brands -->
+                <TextView
+                    android:id="@+id/labelSupportedCards"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Supported Cards"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:alpha="0.7"
+                    android:layout_marginBottom="12dp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <!-- VISA -->
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/outline_credit_card_24"
+                        android:contentDescription="VISA"
+                        app:tint="?attr/colorOnSurfaceVariant"
+                        android:alpha="0.6"
+                        android:layout_marginEnd="12dp"
+                        tools:src="@drawable/outline_credit_card_24" />
+
+                    <!-- MasterCard -->
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/outline_credit_card_24"
+                        android:contentDescription="MasterCard"
+                        app:tint="?attr/colorOnSurfaceVariant"
+                        android:alpha="0.6"
+                        android:layout_marginEnd="12dp"
+                        tools:src="@drawable/outline_credit_card_24" />
+
+                    <!-- Verve -->
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/outline_credit_card_24"
+                        android:contentDescription="Verve"
+                        app:tint="?attr/colorOnSurfaceVariant"
+                        android:alpha="0.6"
+                        android:layout_marginEnd="12dp"
+                        tools:src="@drawable/outline_credit_card_24" />
+
+                    <!-- Generic Card -->
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/outline_credit_card_24"
+                        android:contentDescription="Card"
+                        app:tint="?attr/colorOnSurfaceVariant"
+                        android:alpha="0.6"
+                        tools:src="@drawable/outline_credit_card_24" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Add Card Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:minHeight="56dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:text="Add Card"
+        android:textAllCaps="false"
+        app:cornerRadius="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Widget.Material3.Button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -79,6 +79,28 @@
             android:theme="@style/Theme.NovaApp"
             />
 
+        <activity
+            android:name=".home.ActivityPendingBill"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
+
+        <activity
+            android:name=".home.ActivityAddCard"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
+
+        <activity
+            android:name=".home.ActivityAddProperty"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
+
+
+
+
+
 
         <meta-data
             android:name="preloaded_fonts"

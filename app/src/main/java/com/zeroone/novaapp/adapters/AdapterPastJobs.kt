@@ -54,7 +54,7 @@ class AdapterPastJobs(
                 "deep cleaning" -> R.drawable.vacuum
                 "carpet cleaning" -> R.drawable.power_washing
                 "sofa cleaning" -> R.drawable.broom
-                "mattress cleaning" -> R.drawable.ic_mattress_cleaning
+                "mattress cleaning" -> R.drawable.mattress_cleaner
                 "electrical" -> R.drawable.ic_electrical
                 "plumbing" -> R.drawable.ic_plumbing
                 "furniture" -> R.drawable.ic_furniture

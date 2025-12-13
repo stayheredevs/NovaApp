@@ -39,6 +39,11 @@ class AdapterInvoices(
                 txtInvoiceNumber.text = invoice.invoiceNumber
                 txtStatus.text = invoice.invoiceStatus
 
+
+                cardInvoice.setOnClickListener {
+                    onItemClick(invoice)
+                }
+
             }
         }
 

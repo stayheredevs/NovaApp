@@ -14,6 +14,7 @@ import com.zeroone.novaapp.adapters.AdapterMyAssetCategories
 import com.zeroone.novaapp.adapters.AdapterMyProperties
 import com.zeroone.novaapp.adapters.AdapterAllManagers
 import com.zeroone.novaapp.databinding.FragmentAssetsBinding
+import com.zeroone.novaapp.home.ActivityAddProperty
 import com.zeroone.novaapp.home.ActivityManagerDetails
 import com.zeroone.novaapp.home.ActivityPropertyDetails
 import com.zeroone.novaapp.responseModels.PropertyManagersModel
@@ -232,7 +233,10 @@ class FragmentAssets: Fragment() {
         popupMenu.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.nav_properties -> {
-                    // Handle Add Property item click
+
+                    val intent = Intent(context, ActivityAddProperty::class.java)
+                    startActivity(intent)
+
 
                 }
                 R.id.nav_managers -> {
