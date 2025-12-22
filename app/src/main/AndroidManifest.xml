@@ -97,10 +97,29 @@
             android:theme="@style/Theme.NovaApp"
             />
 
+        <activity
+            android:name=".home.ActivityPropertySize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
 
+        <activity
+            android:name=".home.ActivityPropertyAddress"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
 
+        <activity
+            android:name=".home.ActivityConfirmDetails"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
 
-
+        <activity
+            android:name=".home.ActivityActiveJob"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
 
         <meta-data
             android:name="preloaded_fonts"

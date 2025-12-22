@@ -14,6 +14,7 @@ import com.zeroone.novaapp.adapters.AdapterActiveBookings
 import com.zeroone.novaapp.adapters.AdapterMyProperties
 import com.zeroone.novaapp.adapters.AdapterServices
 import com.zeroone.novaapp.databinding.FragmentAdminHomeBinding
+import com.zeroone.novaapp.home.ActivityActiveJob
 import com.zeroone.novaapp.home.ActivityAllProperties
 import com.zeroone.novaapp.home.ActivityAllServices
 import com.zeroone.novaapp.home.ActivityBookService
@@ -187,6 +188,11 @@ class FragmentAdminHome: Fragment() {
     fun onActiveBookingsClick(activeBookings: ActiveBookingsModel){
 
         AppLog.Log("handleActiveBookingsClick", "clicked ${activeBookings.propertyId}")
+
+        val intent = Intent(requireActivity(), ActivityActiveJob::class.java)
+        intent.putExtra("propertyId", activeBookings.propertyId)
+        startActivity(intent)
+
 
 
     }

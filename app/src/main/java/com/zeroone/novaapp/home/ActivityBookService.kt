@@ -152,7 +152,6 @@ class ActivityBookService: AppCompatActivity() {
         binding.txtReviews.text = spannableString
 
 
-
         adapterServiceOptions = AdapterServiceOptions(
             onOptionClick = { serviceOption ->
 

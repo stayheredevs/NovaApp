@@ -7,6 +7,8 @@ import com.zeroone.novaapp.responseModels.ActionsModel
 import com.zeroone.novaapp.responseModels.AllocatedPropertiesModel
 import com.zeroone.novaapp.responseModels.PropertyManagersModel
 import com.zeroone.novaapp.responseModels.PropertyModel
+import com.zeroone.novaapp.responseModels.PropertySize
+import com.zeroone.novaapp.responseModels.PropertyTypes
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -45,6 +47,23 @@ class PropertiesViewModel @Inject constructor(): ViewModel() {
             }
             return field
         }
+
+    var propertyTypesLiveData: MutableLiveData<MutableList<PropertyTypes>>? = null
+        get() {
+            if (field == null) {
+                propertyTypesLiveData = MutableLiveData()
+            }
+            return field
+        }
+
+    var propertySizeLiveData: MutableLiveData<MutableList<PropertySize>>? = null
+        get() {
+            if (field == null) {
+                propertySizeLiveData = MutableLiveData()
+            }
+            return field
+        }
+
 
 
     fun processProperties(){
@@ -96,6 +115,25 @@ class PropertiesViewModel @Inject constructor(): ViewModel() {
         val lstProperties = propertiesModel.toMutableList()
         allocatedPropertiesLiveData?.postValue(lstProperties)
 
+    }
+
+    fun processPropertyTypes(){
+        val gsonBuilder = GsonBuilder()
+        val gson = gsonBuilder.create()
+
+        val propertyTypes = gson.fromJson(propertyTypes, Array<PropertyTypes>::class.java)
+        val lstPropertyTypes = propertyTypes.toMutableList()
+        propertyTypesLiveData?.postValue(lstPropertyTypes)
+
+    }
+
+    fun processPropertySize(){
+        val gsonBuilder = GsonBuilder()
+        val gson = gsonBuilder.create()
+
+        val propertySize = gson.fromJson(propertySize, Array<PropertySize>::class.java)
+        val lstPropertySize = propertySize.toMutableList()
+        propertySizeLiveData?.postValue(lstPropertySize)
 
 
     }
@@ -282,6 +320,78 @@ class PropertiesViewModel @Inject constructor(): ViewModel() {
     "propertyName": "Hillcrest Towers",
     "propertyAddress": "Kilimani, Nairobi",
     "unitNumber": "E-33"
+  }
+]
+"""
+
+    val propertyTypes = """[
+  {
+    "propertyTypeId": "PT-001",
+    "propertyTypeName": "Apartment"
+  },
+  {
+    "propertyTypeId": "PT-002",
+    "propertyTypeName": "Bungalow"
+  },
+  {
+    "propertyTypeId": "PT-003",
+    "propertyTypeName": "Villa"
+  },
+  {
+    "propertyTypeId": "PT-004",
+    "propertyTypeName": "Townhouse"
+  },
+  {
+    "propertyTypeId": "PT-005",
+    "propertyTypeName": "Maisonette"
+  },
+  {
+    "propertyTypeId": "PT-006",
+    "propertyTypeName": "Studio"
+  },
+  {
+    "propertyTypeId": "PT-007",
+    "propertyTypeName": "Penthouse"
+  },
+  {
+    "propertyTypeId": "PT-008",
+    "propertyTypeName": "Duplex"
+  },
+  {
+    "propertyTypeId": "PT-009",
+    "propertyTypeName": "Cottage"
+  },
+  {
+    "propertyTypeId": "PT-010",
+    "propertyTypeName": "Serviced Apartment"
+  }
+]
+"""
+
+    val propertySize = """[
+  {
+    "sizeId": "SZ001",
+    "sizeName": "Studio"
+  },
+  {
+    "sizeId": "SZ002",
+    "sizeName": "1 Bedroom"
+  },
+  {
+    "sizeId": "SZ003",
+    "sizeName": "2 Bedrooms"
+  },
+  {
+    "sizeId": "SZ004",
+    "sizeName": "3 Bedrooms"
+  },
+  {
+    "sizeId": "SZ005",
+    "sizeName": "4 Bedrooms"
+  },
+  {
+    "sizeId": "SZ006",
+    "sizeName": "Penthouse"
   }
 ]
 """

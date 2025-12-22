@@ -87,6 +87,23 @@
     <string name="set_property_type">Select your property type</string>
     <string name="apartment">Apartment</string>
     <string name="bungalow">Bungalow</string>
+    <string name="select_property_size_prompt">Select the size of your apartment</string>
+    <string name="address_details">Address Details</string>
+    <string name="please_fill_details">Provide address details for your property.</string>
+    <string name="tap_to_search_using_google_places">Tap to search using Google Places</string>
+    <string name="property_size_sq_ft">Property size (sq ft)</string>
+    <string name="submit">Submit</string>
+    <string name="confirm_details">Confirm Details</string>
+    <string name="review_before_submit">Please review and confirm the details below.</string>
+    <string name="property_type_and_size">Property type</string>
+    <string name="property_size_details">Property size</string>
+    <string name="confirm_and_submit">Confirm &amp; submit</string>
+    <string name="edit">Edit</string>
+    <string name="edit_property_type">Edit property type</string>
+    <string name="edit_property_size">Edit property size</string>
+    <string name="edit_property_address">Edit property address</string>
+    <string name="property_unit_number">Unit Number</string>
+    <string name="active_job">Active Job</string>
 
 
 

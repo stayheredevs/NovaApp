@@ -17,6 +17,7 @@ import com.zeroone.novaapp.adapters.AdapterInvoices
 import com.zeroone.novaapp.adapters.AdapterMyAssetCategories
 import com.zeroone.novaapp.adapters.AdapterPastJobs
 import com.zeroone.novaapp.databinding.FragmentJobsBinding
+import com.zeroone.novaapp.home.ActivityActiveJob
 import com.zeroone.novaapp.home.ActivityOrderDetails
 import com.zeroone.novaapp.home.ActivityPendingBill
 import com.zeroone.novaapp.home.InvoicesModel
@@ -268,9 +269,9 @@ class FragmentJobs: Fragment() {
                         activeBookings->
 
                     //action after clicking on item
-                    /*val intent = Intent(context, ActivityOrderDetails::class.java)
+                    val intent = Intent(context, ActivityActiveJob::class.java)
                     intent.putExtra("job", activeBookings)
-                    startActivity(intent)*/
+                    startActivity(intent)
 
                 }
             )
@@ -300,6 +301,8 @@ class FragmentJobs: Fragment() {
             binding.recyclerViewCurrentJobs.visibility = View.VISIBLE
             binding.recyclerViewPastJobs.visibility = View.GONE
         }
+
+
 
     }
 

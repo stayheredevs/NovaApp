@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Header Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/outline_arrow_back_black_24"
+            android:contentDescription="@string/back"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@color/text_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="# JOB-12345"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="12dp"
+            android:gravity="center_vertical" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <!-- Assigned Agent/Personnel Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAssignedAgent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                app:rippleColor="@color/ripple_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- Section Label -->
+                    <TextView
+                        android:id="@+id/lblAssignedAgent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Assigned Agent"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:letterSpacing="0.08"
+                        android:textAllCaps="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="ASSIGNED AGENT" />
+
+                    <!-- Profile Picture Container -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardProfilePicture"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="40dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="2dp"
+                        app:strokeColor="@color/service_icon_background"
+                        app:cardBackgroundColor="@color/service_icon_background"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblAssignedAgent">
+
+                        <ImageView
+                            android:id="@+id/imgProfilePic"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/user_placeholder"
+                            android:contentDescription="Agent Profile"
+                            android:scaleType="centerCrop"
+                            android:padding="4dp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Agent Info Container -->
+                    <LinearLayout
+                        android:id="@+id/llAgentInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toEndOf="@+id/cardProfilePicture"
+                        app:layout_constraintEnd_toStartOf="@+id/cardCallButton"
+                        app:layout_constraintTop_toBottomOf="@+id/lblAssignedAgent">
+
+                        <!-- Agent Name -->
+                        <TextView
+                            android:id="@+id/txtAgentName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="John Smith"
+                            android:textColor="@color/text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:letterSpacing="0.01"
+                            tools:text="John Smith" />
+
+                        <!-- Stats Container -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="12dp">
+
+                            <!-- Completed Jobs Chip -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp"
+                                app:cardBackgroundColor="@color/service_icon_background"
+                                app:strokeWidth="0dp"
+                                android:layout_marginEnd="8dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
+                                    android:paddingTop="6dp"
+                                    android:paddingBottom="6dp">
+
+                                    <TextView
+                                        android:id="@+id/txtCompletedJobs"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="45"
+                                        android:textColor="@color/text_primary"
+                                        android:textSize="14sp"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:layout_marginEnd="4dp"
+                                        tools:text="45" />
+
+                                    <TextView
+                                        android:id="@+id/txtCompletedJobsLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Jobs"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        tools:text="Jobs" />
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <!-- Rating Chip -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp"
+                                app:cardBackgroundColor="@color/service_icon_background"
+                                app:strokeWidth="0dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
+                                    android:paddingTop="6dp"
+                                    android:paddingBottom="6dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgStar"
+                                        android:layout_width="14dp"
+                                        android:layout_height="14dp"
+                                        android:src="@drawable/outline_star_24"
+                                        android:contentDescription="Rating"
+                                        app:tint="@color/warning_color"
+                                        android:layout_marginEnd="4dp" />
+
+                                    <TextView
+                                        android:id="@+id/txtRating"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="4.8"
+                                        android:textColor="@color/text_primary"
+                                        android:textSize="14sp"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        tools:text="4.8" />
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Call Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCallButton"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        app:cardCornerRadius="28dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp"
+                        app:cardBackgroundColor="@color/service_icon_background"
+                        app:rippleColor="@color/primary_color"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblAssignedAgent">
+
+                        <ImageView
+                            android:id="@+id/imgCall"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/outline_call_24"
+                            android:contentDescription="Call Agent"
+                            app:tint="@color/primary_color" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Job Details Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardJobDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                app:rippleColor="@color/ripple_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardAssignedAgent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- Section Label -->
+                    <TextView
+                        android:id="@+id/lblJobDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Job Details"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:letterSpacing="0.08"
+                        android:textAllCaps="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="JOB DETAILS" />
+
+                    <!-- Service Icon Container -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardServiceIcon"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp"
+                        app:cardBackgroundColor="@color/service_icon_background"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblJobDetails">
+
+                        <ImageView
+                            android:id="@+id/imgServiceIcon"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_cleaning"
+                            android:contentDescription="@string/service_type"
+                            android:scaleType="fitCenter"
+                            app:tint="@color/primary_color" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Service Info Container -->
+                    <LinearLayout
+                        android:id="@+id/llServiceInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="12dp"
+                        app:layout_constraintStart_toEndOf="@+id/cardServiceIcon"
+                        app:layout_constraintEnd_toStartOf="@+id/statusBadge"
+                        app:layout_constraintTop_toBottomOf="@+id/lblJobDetails"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <!-- Service Name -->
+                        <TextView
+                            android:id="@+id/txtServiceName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/service_name"
+                            android:textColor="@color/text_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:lineSpacingExtra="2dp"
+                            android:letterSpacing="0.01"
+                            tools:text="Deep Cleaning Service" />
+
+                        <!-- Date and Time Container -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="10dp">
+
+                            <ImageView
+                                android:id="@+id/imgDate"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/outline_calendar_today_24"
+                                android:contentDescription="@string/select"
+                                app:tint="@color/text_secondary" />
+
+                            <TextView
+                                android:id="@+id/txtDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15 Jan 2025"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginEnd="16dp"
+                                tools:text="15 Jan 2025" />
+
+
+                        </LinearLayout>
+
+                        <!-- Time Range Container -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="10dp">
+
+                            <ImageView
+                                android:id="@+id/imgTime"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/outline_access_time_24"
+                                android:contentDescription="@string/select"
+                                app:tint="?attr/colorOnSurfaceVariant" />
+
+                            <TextView
+                                android:id="@+id/txtStartTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10:00 AM"
+                                android:textColor="?attr/colorOnSurfaceVariant"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:layout_marginStart="4dp"
+                                tools:text="10:00 AM" />
+
+                            <TextView
+                                android:id="@+id/txtTimeSeparator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" - "
+                                android:textColor="?attr/colorOnSurfaceVariant"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="4dp" />
+
+                            <TextView
+                                android:id="@+id/txtEndTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="12:00 PM"
+                                android:textColor="?attr/colorOnSurfaceVariant"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                tools:text="12:00 PM" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Status Badge -->
+                    <TextView
+                        android:id="@+id/statusBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="ACCEPTED"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.05"
+                        android:textAllCaps="true"
+                        android:background="@drawable/status_badge_accepted"
+                        android:elevation="2dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblJobDetails"
+                        tools:text="ACCEPTED"
+                        android:visibility="gone"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Job Stages Section Header -->
+            <TextView
+                android:id="@+id/textStages"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/job_stages"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.01"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardJobDetails" />
+
+            <!-- Job Stages RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewStages"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:nestedScrollingEnabled="false"
+                android:scrollbars="none"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textStages" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
