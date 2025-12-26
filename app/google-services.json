@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "580916486500",
+    "project_id": "novabusinessapp",
+    "storage_bucket": "novabusinessapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580916486500:android:9c62d2ca9e11269c051a71",
+        "android_client_info": {
+          "package_name": "com.zeroone.novaapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU8OnTiVLiLq9EBufjXKHUQPXiKhzYR7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

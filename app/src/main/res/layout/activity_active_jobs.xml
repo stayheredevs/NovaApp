@@ -350,8 +350,7 @@
                             android:layout_gravity="center"
                             android:src="@drawable/ic_cleaning"
                             android:contentDescription="@string/service_type"
-                            android:scaleType="fitCenter"
-                            app:tint="@color/primary_color" />
+                            android:scaleType="fitCenter" />
 
                     </com.google.android.material.card.MaterialCardView>
 

@@ -1,10 +1,20 @@
 package com.zeroone.novaapp.home
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import com.freshchat.consumer.sdk.Freshchat
+import com.freshchat.consumer.sdk.FreshchatConfig
 import com.google.android.material.navigation.NavigationBarView
+import com.google.firebase.messaging.FirebaseMessaging
 import com.zeroone.novaapp.fragments.FragmentAdminHome
 import com.zeroone.novaapp.R
 import com.zeroone.novaapp.databinding.AdminLandingPageBinding
@@ -41,6 +51,19 @@ class AdminLandingPage: AppCompatActivity() {
 
         //event listeners
         setListeners()
+
+        val freshChatConfig = FreshchatConfig(resources.getString(R.string.freshchat_app_id), resources.getString(R.string.freshchat_app_key))
+        freshChatConfig.isCameraCaptureEnabled = true
+        freshChatConfig.isGallerySelectionEnabled = true
+        freshChatConfig.isResponseExpectationEnabled = true
+        freshChatConfig.domain = "msdk.me.freshchat.com"
+
+
+        Freshchat.getInstance(applicationContext).init(freshChatConfig)
+
+        // Get FCM Token
+        getCurrentFcmToken()
+
     }
 
     fun setListeners(){
@@ -113,4 +136,22 @@ class AdminLandingPage: AppCompatActivity() {
             e.printStackTrace()
         }
     }
+
+    fun getCurrentFcmToken(){
+        FirebaseMessaging.getInstance().token.addOnCompleteListener {
+            task->
+            if (!task.isSuccessful) {
+                AppLog.Log("firebase_token", "Fetching FCM registration token failed::: ${task.exception}")
+                return@addOnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+            AppLog.Log("firebase_token", "FCM Token: $token")
+
+            // → Send this token to your server / save it / use it
+            // Example: sendRegistrationToServer(token)
+        }
+    }
+
 }

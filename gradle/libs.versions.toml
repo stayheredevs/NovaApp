@@ -8,6 +8,7 @@ espressoCore = "3.7.0"
 lifecycleRuntimeKtx = "2.9.4"
 activityCompose = "1.9.3"
 composeBom = "2024.09.00"
+localbroadcastmanager = "1.1.0"
 material = "1.13.0"
 constraintlayout = "2.2.0"
 hilt = "2.57.2"
@@ -17,11 +18,17 @@ okhttp = "4.12.0"
 activityKtx = "1.9.3"
 glide = "4.14.2"
 parcelize = "2.0.21"
+freshchat = "6.4.7"
+googleServices = "4.4.4"
+fairebaseBom = "34.7.0"
+#firebaseMessagingKtx = "25.0.1"
+
 
 
 [libraries]
 activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-localbroadcastmanager = { module = "androidx.localbroadcastmanager:localbroadcastmanager", version.ref = "localbroadcastmanager" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -53,11 +60,25 @@ okttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", 
 #Glide
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 
+#Fresh chat
+freshchat = { group = "com.github.freshdesk", name = "freshchat-android", version.ref = "freshchat" }
+
+#Firebase Bom
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "fairebaseBom"}
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+
+
+
+#google-services = { id = "com.google.gms:google-services", version.ref = "googleServices" }
 
 

@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.implementation
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -5,6 +7,9 @@ plugins {
     alias(libs.plugins.hilt)
     id("org.jetbrains.kotlin.kapt")
     id("org.jetbrains.kotlin.plugin.parcelize")
+    //id("com.google.gms.google-services")
+    alias(libs.plugins.google.services)
+
 
 
 }
@@ -77,6 +82,19 @@ dependencies {
 
     //Glide
     implementation(libs.glide)
+
+    //Fresh chat
+    implementation(libs.freshchat)
+
+    //local broadcast manager
+    implementation(libs.androidx.localbroadcastmanager)
+
+    //Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.messaging)
+
+
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
