@@ -4,6 +4,9 @@ import android.content.Context
 import android.view.View
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
+import okhttp3.Request
+import okio.Buffer
+import java.io.IOException
 import java.text.DecimalFormat
 
 class AppUtils {
@@ -53,6 +56,17 @@ class AppUtils {
             AppLog.Log("formatted_phone_number", formatted_number)
 
             return formatted_number.trim { it <= ' ' }.replace(" ", "")
+        }
+
+        fun bodyToStringConverter(request: Request): String {
+            try {
+                val copy = request.newBuilder().build()
+                val buffer = Buffer()
+                copy.body!!.writeTo(buffer)
+                return buffer.readUtf8()
+            } catch (e: IOException) {
+                return "did not work"
+            }
         }
 
     }

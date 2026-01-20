@@ -17,6 +17,10 @@ android {
     namespace = "com.zeroone.novaapp"
     compileSdk = 35
 
+    buildFeatures {
+        buildConfig = true   // ← Add this line
+    }
+
     defaultConfig {
         applicationId = "com.zeroone.novaapp"
         minSdk = 24
@@ -34,6 +38,12 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            buildConfigField("String", "API_URL", "https://api.novatouchservices.com/")
+        }
+        debug {
+            // Optional: override for staging/dev environment
+            buildConfigField("String", "API_URL", "\"https://api.novatouchservices.com/\"")
         }
     }
     compileOptions {
