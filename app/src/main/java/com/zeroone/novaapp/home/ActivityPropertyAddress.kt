@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.zeroone.novaapp.databinding.ActivityPropertyAddressBinding
 import com.zeroone.novaapp.responseModels.PropertyDetailsModel
-import com.zeroone.novaapp.utilities.AppLog
+import com.zeroone.novaapp.utils.AppLog
 import dagger.hilt.android.AndroidEntryPoint
 
 

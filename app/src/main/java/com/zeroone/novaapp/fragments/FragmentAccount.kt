@@ -10,7 +10,11 @@ import androidx.fragment.app.Fragment
 import com.freshchat.consumer.sdk.Freshchat
 import com.freshchat.consumer.sdk.exception.MethodNotAllowedException
 import com.zeroone.novaapp.databinding.FragmentAccountBinding
-import com.zeroone.novaapp.home.ActivityManageNotifications
+import com.zeroone.novaapp.utilities.ActivityAbout
+import com.zeroone.novaapp.utilities.ActivityManageNotifications
+import com.zeroone.novaapp.utilities.ActivityPrivacyPolicy
+import com.zeroone.novaapp.utilities.ActivityReferral
+import com.zeroone.novaapp.utilities.ActivityTermsAndConditions
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -61,5 +65,23 @@ class FragmentAccount: Fragment() {
             }
 
         }
+
+        binding.layoutSendReferral.setOnClickListener {
+            startActivity(Intent(requireContext(), ActivityReferral::class.java)
+            )}
+
+        binding.layoutAbout.setOnClickListener {
+            startActivity(Intent(requireContext(), ActivityAbout::class.java)
+            )}
+
+        binding.layoutTermsAndConditions.setOnClickListener {
+            startActivity(Intent(requireContext(), ActivityTermsAndConditions::class.java)
+            )}
+
+        binding.layoutPrivacyPolicy.setOnClickListener {
+            startActivity(Intent(requireContext(), ActivityPrivacyPolicy::class.java)
+            )}
+
+
     }
 }

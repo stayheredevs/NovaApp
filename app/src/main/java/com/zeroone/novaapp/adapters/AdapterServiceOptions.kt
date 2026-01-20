@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.zeroone.novaapp.R
 import com.zeroone.novaapp.databinding.AdapterServiceOptionsBinding
 import com.zeroone.novaapp.responseModels.ServiceOptions
-import com.zeroone.novaapp.utilities.AppUtils
+import com.zeroone.novaapp.utils.AppUtils
 
 class AdapterServiceOptions(
     val onOptionClick: (ServiceOptions) -> Unit = {}

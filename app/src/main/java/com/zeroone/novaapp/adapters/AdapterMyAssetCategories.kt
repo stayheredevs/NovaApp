@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.zeroone.novaapp.R
 import com.zeroone.novaapp.databinding.AdapterAssetsCategoryBinding
 import com.zeroone.novaapp.responseModels.AssetCategoriesModel
-import com.zeroone.novaapp.responseModels.ServicesModel
-import com.zeroone.novaapp.utilities.AppLog
 
 class AdapterMyAssetCategories (
     val onCategoryClicked: (AssetCategoriesModel) -> Unit = {}

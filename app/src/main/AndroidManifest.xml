@@ -22,6 +22,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NovaApp">
+
         <activity
             android:name=".home.AdminLandingPage"
             android:exported="true"
@@ -33,6 +34,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".authentication.ActivityPhoneNumber"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
+
+        <activity
+            android:name=".authentication.ActivityPhoneNumberVerification"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
 
         <activity
             android:name=".home.ActivityJobStatus"
@@ -129,12 +141,30 @@
             />
 
         <activity
-            android:name=".home.ActivityManageNotifications"
+            android:name=".utilities.ActivityManageNotifications"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NovaApp"
             />
 
+        <activity android:name=".utilities.ActivityReferral"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
 
+        <activity android:name=".utilities.ActivityAbout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
+
+        <activity android:name=".utilities.ActivityPrivacyPolicy"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
+
+        <activity android:name=".utilities.ActivityTermsAndConditions"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NovaApp"
+            />
 
         <meta-data
             android:name="preloaded_fonts"
@@ -156,7 +186,7 @@
         </provider>
 
         <service
-            android:name=".utilities.MyFirebaseMessagingService"
+            android:name=".utils.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

@@ -3,7 +3,6 @@ package com.zeroone.novaapp.home
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.ViewTreeObserver
 import androidx.activity.addCallback
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -15,10 +14,10 @@ import com.zeroone.novaapp.R
 import com.zeroone.novaapp.databinding.ActivityCompleteBookingBinding
 import com.zeroone.novaapp.responseModels.BookingDetails
 import com.zeroone.novaapp.responseModels.PropertyModel
-import com.zeroone.novaapp.utilities.AppLog
-import com.zeroone.novaapp.utilities.AppUtils
-import com.zeroone.novaapp.utilities.EdgeToEdgeManager
-import com.zeroone.novaapp.utilities.SharedPreference
+import com.zeroone.novaapp.utils.AppLog
+import com.zeroone.novaapp.utils.AppUtils
+import com.zeroone.novaapp.utils.EdgeToEdgeManager
+import com.zeroone.novaapp.utils.SharedPreference
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Calendar

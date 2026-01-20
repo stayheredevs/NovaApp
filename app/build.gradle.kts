@@ -7,7 +7,6 @@ plugins {
     alias(libs.plugins.hilt)
     id("org.jetbrains.kotlin.kapt")
     id("org.jetbrains.kotlin.plugin.parcelize")
-    //id("com.google.gms.google-services")
     alias(libs.plugins.google.services)
 
 
@@ -94,6 +93,8 @@ dependencies {
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.messaging)
 
+    //Pineview
+    implementation(libs.pineview)
 
     
     testImplementation(libs.junit)

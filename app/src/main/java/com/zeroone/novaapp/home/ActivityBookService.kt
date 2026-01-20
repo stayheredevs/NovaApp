@@ -8,7 +8,6 @@ import android.text.Spanned
 import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.set
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -22,9 +21,9 @@ import com.zeroone.novaapp.databinding.BottomsheetServicesDetailsBinding
 import com.zeroone.novaapp.responseModels.BookingDetails
 import com.zeroone.novaapp.responseModels.PropertyModel
 import com.zeroone.novaapp.responseModels.ServiceOptions
-import com.zeroone.novaapp.utilities.AppLog
-import com.zeroone.novaapp.utilities.AppUtils
-import com.zeroone.novaapp.utilities.EdgeToEdgeManager
+import com.zeroone.novaapp.utils.AppLog
+import com.zeroone.novaapp.utils.AppUtils
+import com.zeroone.novaapp.utils.EdgeToEdgeManager
 import com.zeroone.novaapp.viewModels.BookingsViewModel
 import com.zeroone.novaapp.viewModels.ServicesViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,9 +45,6 @@ class ActivityBookService: AppCompatActivity() {
     var optionPrice: String = ""
 
     var lstServiceOptions: MutableList<ServiceOptions> = mutableListOf()
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

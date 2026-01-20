@@ -19,7 +19,7 @@ import com.zeroone.novaapp.home.ActivityManagerDetails
 import com.zeroone.novaapp.home.ActivityPropertyDetails
 import com.zeroone.novaapp.responseModels.PropertyManagersModel
 import com.zeroone.novaapp.responseModels.PropertyModel
-import com.zeroone.novaapp.utilities.AppLog
+import com.zeroone.novaapp.utils.AppLog
 import com.zeroone.novaapp.viewModels.PropertiesViewModel
 import com.zeroone.novaapp.viewModels.UtilitiesViewModel
 import dagger.hilt.android.AndroidEntryPoint

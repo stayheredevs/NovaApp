@@ -1,16 +1,14 @@
-package com.zeroone.novaapp.utilities
+package com.zeroone.novaapp.utils
 
 import android.os.Build
 import android.view.View
 import android.view.Window
-import android.view.WindowInsetsController
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.Insets
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 
 /**
  * Helper class to handle Edge-to-Edge display for Android 15+ (API 35+)

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary_color">
+
+        <LinearLayout
+            android:id="@+id/llHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/outline_arrow_back_white_24"
+                android:layout_alignParentLeft="true"
+                android:padding="5dp"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtHeader"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Refer your friends and Earn"
+            android:textColor="@color/white"
+            style="@style/NovaBold"
+            android:layout_below="@+id/llHeader"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:textSize="22dp"
+            android:layout_marginTop="18dp"
+            />
+
+        <ImageView
+            android:id="@+id/imgReferIcon"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            android:src="@drawable/icon_gift_box"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/txtHeader"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/txtDisclaimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            style="@style/NovaMedium"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/imgReferIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="16dp"
+            android:lineSpacingExtra="3dp"
+            android:text="Get 100 points once your friend successfully signs up. Your friend will get 100 points as well"/>
+
+        <RelativeLayout
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/txtDisclaimer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/dotted_outline_layout">
+
+            <LinearLayout
+                android:id="@+id/llReferralCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your referral code"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="5dp"
+                    style="@style/NovaMedium"
+                    />
+
+                <TextView
+                    android:id="@+id/txtReferralCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ABCDE1234"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    style="@style/NovaBold"
+                    android:layout_marginTop="-1dp"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white"
+                android:layout_toLeftOf="@+id/txtCopyCode"/>
+
+            <TextView
+                android:id="@+id/txtCopyCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy\nCode"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                style="@style/NovaMedium"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/llShareApp"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:background="@drawable/circular_button_layout"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtSendInvite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SEND INVITE"
+                android:textColor="@color/primary_color"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textSize="20dp"
+                style="@style/NovaBold"
+                android:layout_marginTop="-1dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/outline_arrow_forward_black_20"
+                android:layout_toRightOf="@+id/txtSendInvite"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

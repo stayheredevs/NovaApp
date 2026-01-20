@@ -10,6 +10,7 @@ import com.zeroone.novaapp.R
 import com.zeroone.novaapp.adapters.ActivityAllocatedProperties
 import com.zeroone.novaapp.databinding.ActivityManagerDetailsBinding
 import com.zeroone.novaapp.responseModels.PropertyManagersModel
+import com.zeroone.novaapp.utils.EdgeToEdgeManager
 import com.zeroone.novaapp.viewModels.PropertiesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,16 +33,17 @@ class ActivityManagerDetails: AppCompatActivity() {
 
         propertiesViewModel = ViewModelProvider(this)[PropertiesViewModel::class.java]
 
-
         //init
         init()
 
         //init properties adapter
         initPropertiesAdapter()
 
-
         //set listeners
         setListeners()
+
+        // Enable edge-to-edge for Android 15+ devices
+        EdgeToEdgeManager.handleEdgeToEdge(window, binding.root, R.color.primary_color)
 
 
     }

@@ -11,7 +11,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.zeroone.novaapp.R
 import com.zeroone.novaapp.databinding.AdapterAllocatedManagersBinding
 import com.zeroone.novaapp.responseModels.PropertyManagersModel
-import com.zeroone.novaapp.utilities.AppLog
+import com.zeroone.novaapp.utils.AppLog
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale

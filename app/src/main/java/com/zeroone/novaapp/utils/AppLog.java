@@ -1,4 +1,4 @@
-package com.zeroone.novaapp.utilities;
+package com.zeroone.novaapp.utils;
 
 import android.content.Context;
 import android.util.Log;

@@ -1,7 +1,6 @@
 package com.zeroone.novaapp.home
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.SpannableString
@@ -24,10 +23,10 @@ import com.zeroone.novaapp.databinding.BottomsheetServicesDetailsBinding
 import com.zeroone.novaapp.responseModels.BookingDetails
 import com.zeroone.novaapp.responseModels.ServiceOptions
 import com.zeroone.novaapp.responseModels.ServicesModel
-import com.zeroone.novaapp.utilities.AppLog
-import com.zeroone.novaapp.utilities.AppUtils
-import com.zeroone.novaapp.utilities.EdgeToEdgeManager
-import com.zeroone.novaapp.utilities.SharedPreference
+import com.zeroone.novaapp.utils.AppLog
+import com.zeroone.novaapp.utils.AppUtils
+import com.zeroone.novaapp.utils.EdgeToEdgeManager
+import com.zeroone.novaapp.utils.SharedPreference
 import com.zeroone.novaapp.viewModels.ServicesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

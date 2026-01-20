@@ -1,15 +1,9 @@
 package com.zeroone.novaapp.home
 
-import android.Manifest
-import android.content.pm.PackageManager
-import android.os.Build
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.freshchat.consumer.sdk.Freshchat
 import com.freshchat.consumer.sdk.FreshchatConfig
@@ -17,19 +11,26 @@ import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.messaging.FirebaseMessaging
 import com.zeroone.novaapp.fragments.FragmentAdminHome
 import com.zeroone.novaapp.R
+import com.zeroone.novaapp.authentication.ActivityPhoneNumber
 import com.zeroone.novaapp.databinding.AdminLandingPageBinding
 import com.zeroone.novaapp.fragments.FragmentAccount
 import com.zeroone.novaapp.fragments.FragmentAssets
 import com.zeroone.novaapp.fragments.FragmentJobs
-import com.zeroone.novaapp.utilities.AppLog
-import com.zeroone.novaapp.utilities.EdgeToEdgeManager
+import com.zeroone.novaapp.utils.AppLog
+import com.zeroone.novaapp.utils.EdgeToEdgeManager
+import com.zeroone.novaapp.utils.SharedPreference
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class AdminLandingPage: AppCompatActivity() {
     lateinit var binding: AdminLandingPageBinding
 
     lateinit var fragment: Fragment
+
+    @Inject
+    lateinit var sharedPreference: SharedPreference
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +41,9 @@ class AdminLandingPage: AppCompatActivity() {
 
         // Enable edge-to-edge for Android 15+ devices
         EdgeToEdgeManager.handleEdgeToEdge(window, binding.root, R.color.primary_color)
+
+        //launch home screen
+        launchHomeScreen()
 
 
         // Load initial fragment first (before setting listener to avoid conflicts)
@@ -151,6 +155,23 @@ class AdminLandingPage: AppCompatActivity() {
 
             // → Send this token to your server / save it / use it
             // Example: sendRegistrationToServer(token)
+        }
+    }
+
+    private fun launchHomeScreen() {
+        try {
+            //sharedPreference.isFirstTimeLaunch = false
+
+            if (sharedPreference.isAgentLoggedIn == false) {
+                val intent = Intent(this, ActivityPhoneNumber::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+
+        } catch (e: Exception) {
+            AppLog.Log("error", e.message.toString())
+
         }
     }
 

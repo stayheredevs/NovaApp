@@ -1,4 +1,4 @@
-package com.zeroone.novaapp.utilities
+package com.zeroone.novaapp.utils
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -7,7 +7,6 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.zeroone.novaapp.responseModels.BookingDetails
 import com.zeroone.novaapp.responseModels.PropertyModel
-import com.zeroone.novaapp.responseModels.ServicesModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
@@ -73,6 +72,32 @@ class SharedPreference @Inject constructor(@ApplicationContext context: Context)
             }
 
         }
+
+
+    var isFirstTimeLaunch: Boolean
+        get() = app_prefs.getBoolean(IS_FIRST_TIME_LAUNCH, true)
+        set(isFirstTime) {
+            val editor = app_prefs.edit()
+            editor.putBoolean(IS_FIRST_TIME_LAUNCH, isFirstTime)
+            editor.commit()
+        }
+
+    var isAgentLoggedIn: Boolean?
+        get() = app_prefs.getBoolean("is_logged_in", false)
+        set(logged_in) {
+            val edit = app_prefs.edit()
+            edit.putBoolean("is_logged_in", logged_in!!)
+            edit.apply()
+        }
+
+
+    companion object {
+        const val IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch"
+
+        fun removeSpecialCharacters(input: String): String {
+            return input.trim('"').replace("\\\"", "\"").replace("\\r\\n", "").replace("\\", "")
+        }
+    }
 
 
 }

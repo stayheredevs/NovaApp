@@ -9,8 +9,8 @@ import com.zeroone.novaapp.R
 import com.zeroone.novaapp.adapters.AdapterJobStages
 import com.zeroone.novaapp.databinding.ActivityOrderDetailsBinding
 import com.zeroone.novaapp.responseModels.PastJobsModel
-import com.zeroone.novaapp.utilities.AppLog
-import com.zeroone.novaapp.utilities.AppUtils
+import com.zeroone.novaapp.utils.AppLog
+import com.zeroone.novaapp.utils.EdgeToEdgeManager
 import com.zeroone.novaapp.viewModels.JobsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,7 +31,6 @@ class ActivityOrderDetails: AppCompatActivity() {
         //init view model
         jobsViewModel = ViewModelProvider(this)[JobsViewModel::class.java]
 
-
         //init adapter
         initJobStepsAdapter()
 
@@ -40,6 +39,9 @@ class ActivityOrderDetails: AppCompatActivity() {
 
         //Set Listeners
         setListeners()
+
+        // Enable edge-to-edge for Android 15+ devices
+        EdgeToEdgeManager.handleEdgeToEdge(window, binding.root, R.color.primary_color)
 
     }
 

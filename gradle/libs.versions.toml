@@ -21,7 +21,7 @@ parcelize = "2.0.21"
 freshchat = "6.4.7"
 googleServices = "4.4.4"
 fairebaseBom = "34.7.0"
-#firebaseMessagingKtx = "25.0.1"
+pineview = "v1.5"
 
 
 
@@ -68,6 +68,9 @@ firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.r
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
 
+
+#Pineview
+pineview = { group = "com.github.GoodieBag", name = "Pinview", version.ref = "pineview" }
 
 
 [plugins]

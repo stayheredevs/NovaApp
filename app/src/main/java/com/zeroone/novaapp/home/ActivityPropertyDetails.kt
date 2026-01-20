@@ -2,32 +2,21 @@ package com.zeroone.novaapp.home
 
 import android.content.Context
 import android.os.Bundle
-import android.text.SpannableString
-import android.text.Spanned
-import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.zeroone.novaapp.R
 import com.zeroone.novaapp.adapters.AdapterActions
 import com.zeroone.novaapp.adapters.AdapterAllocatedManagers
-import com.zeroone.novaapp.adapters.AdapterServiceOptions
 import com.zeroone.novaapp.databinding.ActionsBottomSheetBinding
 import com.zeroone.novaapp.databinding.ActivityPropertyDetailsBinding
-import com.zeroone.novaapp.databinding.BottomsheetServicesDetailsBinding
-import com.zeroone.novaapp.responseModels.ActionsModel
-import com.zeroone.novaapp.responseModels.BookingDetails
 import com.zeroone.novaapp.responseModels.PropertyModel
-import com.zeroone.novaapp.responseModels.ServiceOptions
-import com.zeroone.novaapp.utilities.AppLog
-import com.zeroone.novaapp.utilities.AppUtils
-import com.zeroone.novaapp.utilities.EdgeToEdgeManager
+import com.zeroone.novaapp.utils.AppLog
+import com.zeroone.novaapp.utils.EdgeToEdgeManager
 import com.zeroone.novaapp.viewModels.PropertiesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

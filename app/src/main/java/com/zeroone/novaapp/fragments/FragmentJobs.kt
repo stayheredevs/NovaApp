@@ -23,14 +23,13 @@ import com.zeroone.novaapp.home.ActivityPendingBill
 import com.zeroone.novaapp.home.InvoicesModel
 import com.zeroone.novaapp.responseModels.ActiveBookingsModel
 import com.zeroone.novaapp.responseModels.PastJobsModel
-import com.zeroone.novaapp.utilities.AppLog
-import com.zeroone.novaapp.utilities.AppUtils
+import com.zeroone.novaapp.utils.AppLog
+import com.zeroone.novaapp.utils.AppUtils
 import com.zeroone.novaapp.viewModels.BookingsViewModel
 import com.zeroone.novaapp.viewModels.ServicesViewModel
 import com.zeroone.novaapp.viewModels.UtilitiesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
-import java.time.LocalDate
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale

@@ -27,8 +27,8 @@ import com.zeroone.novaapp.home.ActivityBookService
 import com.zeroone.novaapp.responseModels.ActiveBookingsModel
 import com.zeroone.novaapp.responseModels.PropertyModel
 import com.zeroone.novaapp.responseModels.ServicesModel
-import com.zeroone.novaapp.utilities.AppLog
-import com.zeroone.novaapp.utilities.AppUtils
+import com.zeroone.novaapp.utils.AppLog
+import com.zeroone.novaapp.utils.AppUtils
 import com.zeroone.novaapp.viewModels.BookingsViewModel
 import com.zeroone.novaapp.viewModels.PropertiesViewModel
 import com.zeroone.novaapp.viewModels.ServicesViewModel

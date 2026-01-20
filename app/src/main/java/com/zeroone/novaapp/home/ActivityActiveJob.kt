@@ -16,7 +16,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.zeroone.novaapp.R
 import com.zeroone.novaapp.adapters.AdapterJobStages
 import com.zeroone.novaapp.databinding.ActivityActiveJobsBinding
-import com.zeroone.novaapp.utilities.AppLog
+import com.zeroone.novaapp.utils.AppLog
+import com.zeroone.novaapp.utils.EdgeToEdgeManager
 import com.zeroone.novaapp.viewModels.JobsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -44,6 +45,9 @@ class ActivityActiveJob: AppCompatActivity() {
 
         //set listeners
         setListener()
+
+        // Enable edge-to-edge for Android 15+ devices
+        EdgeToEdgeManager.handleEdgeToEdge(window, binding.root, R.color.primary_color)
 
 
     }
